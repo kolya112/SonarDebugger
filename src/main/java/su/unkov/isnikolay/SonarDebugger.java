@@ -8,7 +8,7 @@ import com.velocitypowered.api.proxy.ProxyServer;
 import org.slf4j.Logger;
 import xyz.jonesdev.sonar.api.Sonar;
 
-@Plugin(id = "sonardebugger", name = "SonarDebugger", version = BuildConstants.VERSION, description = "Debbuger for detect events for Sonar plugin", url = "isnikolay.unkov.su", authors = {"isNIKOLAY"})
+@Plugin(id = "sonardebugger", name = "SonarDebugger", version = BuildConstants.VERSION, description = "Debbuger for analyze events for Sonar plugin", url = "isnikolay.unkov.su", authors = {"isNIKOLAY"})
 public class SonarDebugger {
 
     @Inject

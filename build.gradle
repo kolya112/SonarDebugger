@@ -6,7 +6,7 @@ plugins {
 }
 
 group = 'su.unkov.isnikolay'
-version = '1.0-SNAPSHOT'
+version = '1.2-SNAPSHOT'
 
 repositories {
     mavenCentral()
@@ -23,7 +23,7 @@ repositories {
 dependencies {
     compileOnly("com.velocitypowered:velocity-api:3.4.0-SNAPSHOT")
     annotationProcessor("com.velocitypowered:velocity-api:3.4.0-SNAPSHOT")
-    compileOnly("xyz.jonesdev:sonar-api:2.1.38")
+    compileOnly("xyz.jonesdev.sonar:sonar-api:2.1.44")
 }
 
 tasks {

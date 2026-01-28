@@ -16,24 +16,24 @@ public final class SonarEventsHandler implements SonarEventListener {
         {
             final UserVerifyJoinEvent joinEvent = (UserVerifyJoinEvent) event;
 
-            Sonar.get().getLogger().info("[DEBUGGER | J] User joined to verify process: " + joinEvent.getUser().getUsername() + " (IP: " + joinEvent.getUser().getInetAddress() + ")" + " | PV: " + joinEvent.getUser().getProtocolVersion());
+            Sonar.get().getLogger().info("[DEBUGGER | J] " + joinEvent.getUser().getUsername() + " (IP: " + joinEvent.getUser().getInetAddress() + ")" + " | PV: " + joinEvent.getUser().getProtocolVersion());
         }
         else if (event instanceof UserVerifySuccessEvent) {
             final UserVerifySuccessEvent successEvent = (UserVerifySuccessEvent) event;
 
-            Sonar.get().getLogger().info("[DEBUGGER | V] User successfully verified: %s (IP: %s) (took %s ms to verify)%n",
+            Sonar.get().getLogger().info("[DEBUGGER | V] " + successEvent.getUser().getUsername() + " (IP: " + successEvent.getUser().getInetAddress() + ") (took " + successEvent.getUser().getLoginTimer() + " ms to verify)",
                     successEvent.getUser().getUsername(), successEvent.getUser().getInetAddress(), successEvent.getUser().getLoginTimer());
         }
         else if (event instanceof UserVerifyFailedEvent) {
             final UserVerifyFailedEvent failedEvent = (UserVerifyFailedEvent) event;
 
-            Sonar.get().getLogger().info("[DEBUGGER | F] User failed verify process: " + failedEvent.getUser().getUsername() + " (IP: " + failedEvent.getUser().getInetAddress() + ")" + " | PV: " + failedEvent.getUser().getProtocolVersion());
+            Sonar.get().getLogger().info("[DEBUGGER | F] " + failedEvent.getUser().getUsername() + " (IP: " + failedEvent.getUser().getInetAddress() + ")" + " | PV: " + failedEvent.getUser().getProtocolVersion());
             Sonar.get().getLogger().info("REASON: " + failedEvent.getReason());
         }
         else if (event instanceof UserBlacklistedEvent) {
             final UserBlacklistedEvent blacklistedEvent = (UserBlacklistedEvent) event;
 
-            Sonar.get().getLogger().info("[DEBUGGER | B] User was blocked: " + blacklistedEvent.getUser().getUsername() + " (IP: " + blacklistedEvent.getUser().getInetAddress() + ")" + " | PV: " + blacklistedEvent.getUser().getProtocolVersion());
+            Sonar.get().getLogger().info("[DEBUGGER | B] " + blacklistedEvent.getUser().getUsername() + " (IP: " + blacklistedEvent.getUser().getInetAddress() + ")" + " | PV: " + blacklistedEvent.getUser().getProtocolVersion());
         }
 
 
